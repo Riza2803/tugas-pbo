@@ -4,6 +4,7 @@
         public $kartuMember;
         public $totalBelanja;
         public $totalBayar;
+        public $totalDiskon;
 
         public function hitungBelanja() { // Method untuk menghitung total bayar berdasarkan kartu member dan total belanja
          if ($this->kartuMember == "Ya") {
@@ -21,6 +22,7 @@
                     {
                     $this->totalBayar = $this->totalBelanja; }
             }
+                    $this->totalDiskon = $this->totalBelanja - $this->totalBayar;
         } 
     }
     
@@ -32,6 +34,7 @@
     echo "<b>Nama Pembeli: " . $belanja->nama . "<br><br>";
     echo "Kartu Member: " . $belanja->kartuMember . "<br><br>";
     echo "Total Belanja: " . $belanja->totalBelanja . "<br><br>";
+    echo "Total Diskon: " . $belanja->totalDiskon . "<br><br>";
     echo "Total Bayar: " . $belanja->totalBayar . "<br><br>";
 
 ?>
